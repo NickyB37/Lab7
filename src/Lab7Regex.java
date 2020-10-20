@@ -14,16 +14,31 @@ public class Lab7Regex {
 		Scanner scnr = new Scanner(System.in);
 		
 		System.out.print("Please enter a valid Name: ");
-		String name = scnr.nextLine();
+		String input = scnr.nextLine();
+		validateName(input);
 		
-		validateName(name);
-
+		System.out.print("Please enter a valid email: ");
+		String input1 = scnr.nextLine();
+		validateEmail(input1);
+	
+		System.out.print("Please enter a valid phone number: ");
+		String input2 = scnr.nextLine();
+		validatePhone(input2);
+	
+		System.out.print("Please enter a valid date: ");
+		String input3 = scnr.nextLine();
+		validateDate(input3);
+	
+	
+	
+	
+	
 	}
 
 	public static boolean validateName(String name) {
 
 		// change this to pass ALL tests
-		String regex = "";
+		String regex = "[A-Za-z]*";
 
 		if (name.matches(regex)) {
 			System.out.println("Name is valid!");
@@ -37,7 +52,7 @@ public class Lab7Regex {
 	public static boolean validateEmail(String email) {
 
 		// change this to pass ALL tests
-		String regex = "";
+		String regex = ".*\\w[a-zA-z].[a-zA-z][a-z]*";
 
 		if (email.matches(regex)) {
 			System.out.println("Email is valid!");
@@ -51,7 +66,7 @@ public class Lab7Regex {
 	public static boolean validatePhone(String phone) {
 
 		// change this to pass ALL tests
-		String regex = "";
+		String regex = "\\d{3}.\\d{3}.\\d{4}";
 
 		if (phone.matches(regex)) {
 			System.out.println("Phone number is valid!");
@@ -65,7 +80,7 @@ public class Lab7Regex {
 	public static boolean validateDate(String date) {
 
 		// change this to pass ALL tests
-		String regex = "";
+		String regex = "\\d{2}.\\d{2}.\\d{4}";
 
 		if (date.matches(regex)) {
 			System.out.println("Date is valid!");
